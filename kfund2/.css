@@ -1,0 +1,183 @@
+:root {
+    --bg: #F0F4F3;
+    --theme: #3AB19B;
+    --theme-two: #FFFFFF;
+    --text: #697a79;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><circle cx="50" cy="50" r="50" fill="%23FBCD44"/></g></svg>'), url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><path d="M 0 80 l 100 -80 v 100 z" fill="%23E35E6A"/></g></svg>'), var(--bg);
+    background-repeat: no-repeat;
+    background-position: bottom -150px left -70px, top -120px right -100px;
+    background-size: 300px, 380px, 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><circle cx="50" cy="50" r="50" fill="%23ffffff22"/></g></svg>'), url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="scale(0.8 0.8) translate(5 5)"><path d="M 0 80 l 100 -80 v 100 z" fill="%23ffffff22"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: bottom -150px left -70px, top -120px right -100px;
+    background-size: 300px, 380px;
+}
+
+main.panel {
+    max-width: 900px;
+    width: 90vw;
+    background: var(--theme-two);
+    border-radius: 20px;
+    box-shadow: 0 2px 5px -6px var(--text), 0 0 30px -50px var(--text);
+    display: flex;
+}
+
+*/ main.panel .panel__half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 2;
+    padding: 2rem 1rem;
+}
+
+main.panel h2 {
+    font-size: 1.9rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+main.panel p {
+    margin: 1rem 0;
+    max-width: 300px;
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: center;
+}
+
+main.panel a,
+main.panel button {
+    color: inherit;
+    font-family: inherit;
+}
+
+main.panel a {
+    text-decoration: none;
+    margin: 1rem 1rem;
+}
+
+main.panel .links a {
+    display: inline-block;
+    font-weight: 900;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+}
+
+main.panel .links a:hover,
+main.panel .links a:focus {
+    background: var(--text);
+    color: var(--theme-two);
+}
+
+main.panel .panel__half>a {
+    position: relative;
+}
+
+main.panel .panel__half>a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px dashed currentColor;
+    opacity: 0.4;
+}
+
+main.panel form {
+    display: flex;
+    flex-direction: column;
+}
+
+main.panel form input {
+    margin: 0.5rem 0;
+    width: 300px;
+    padding: 1rem 0.75rem;
+    background: var(--bg);
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+main.panel form input::placeholder {
+    opacity: 0.8;
+}
+
+main.panel button {
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 50px;
+    padding: 0.85rem 2.75rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.panel__half.half--first {
+    flex-grow: 2;
+    border-radius: inherit;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.panel__half.half--first button {
+    background: var(--theme);
+    color: var(--theme-two);
+}
+
+.panel__half.half--second {
+    background: var(--theme);
+    color: var(--theme-two);
+    padding: 2rem;
+    flex-grow: 1;
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-contact:hover {
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.36);
+}
+
+@media (max-width: 768px) {
+    main.panel {
+        flex-direction: column;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+}
